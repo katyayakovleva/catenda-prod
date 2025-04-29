@@ -87,6 +87,12 @@ define('DB_USER', 'new_db_user');
 define('DB_PASSWORD', 'strong_password');
 define('DB_HOST', 'localhost');
 ```
+Change domain:
+ 
+```php
+define('WP_HOME', 'https://new-domain.com');
+define('WP_SITEURL', 'https://new-domain.com');
+```
 
 
 ### 5. Updating Site URL
