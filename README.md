@@ -211,11 +211,12 @@ certbot renew --dry-run
 
 To update the **catenda** theme:
 
-1. Download the latest theme archive named `catenda.zip`.
+1. Create **.zip** archive.
+    - **Important**: The archive must be named exactly **catenda.zip**.
 2. In WordPress Admin:
    - Go to **Appearance > Themes > Add New > Upload Theme**.
    - Select `catenda.zip` and click **Install Now**.
-   - Activate the theme if needed.
+   - Select **Replace installed with uploaded**.
 
 **Alternative method:**
 
