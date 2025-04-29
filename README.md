@@ -88,7 +88,7 @@ define('DB_PASSWORD', 'strong_password');
 define('DB_HOST', 'localhost');
 ```
 Change domain:
- 
+
 ```php
 define('WP_HOME', 'https://new-domain.com');
 define('WP_SITEURL', 'https://new-domain.com');
@@ -198,8 +198,6 @@ certbot renew --dry-run
 
 ### 8. Final Steps
 
-- Update **DNS A-records** to the new server IP
-- Clear browser and server cache
 - Verify:
   - Homepage loading
   - Admin dashboard access
