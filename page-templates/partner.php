@@ -59,7 +59,7 @@ get_header('white'); // Include the white header template.
                                     ?>
                                     " class="card fade">
                                         <?php if ( has_post_thumbnail($partner->ID) ) : ?>
-                                            <img src="<?php echo get_the_post_thumbnail_url($partner->ID);?>" alt="<?php the_title(); ?>">
+                                            <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($partner->ID);?>" alt="<?php the_title(); ?>">
                                         <?php endif;?>
                                         <?php 
                                         $partner_type = get_field('partner_type',$partner->ID);  
@@ -128,7 +128,7 @@ get_header('white'); // Include the white header template.
                             <div class="fade" style="transition-duration: 0.5s;">
                                 <div>
                                     <?php if($icon){?>
-                                    <img src=" <?php if($icon['url']){echo esc_url($icon['url']);} ?>" alt="<?php if($icon['title']){ echo esc_url($icon['title']); }?>">
+                                    <img loading="lazy" src=" <?php if($icon['url']){echo esc_url($icon['url']);} ?>" alt="<?php if($icon['title']){ echo esc_url($icon['title']); }?>">
                                     <?php } ?>
                                 </div>
                                 <b role="heading" aria-level="3"><?php if($title){ echo esc_html( $title ); } ?></b>
@@ -160,7 +160,7 @@ get_header('white'); // Include the white header template.
                         <h2 style="padding-bottom: 64px;"><?php if($tagline_block['title']){ echo $tagline_block['title']; } ?></h2>
                         <div class="tagline__inner fade-container">
                             <?php if($tagline_block['image']){?>
-                            <img src="<?php if($tagline_block['image']['url']){ echo esc_url($tagline_block['image']['url']); } ?>" alt="<?php if($tagline_block['image']['title']){ echo esc_url($tagline_block['image']['title']); } ?>" class="fade">
+                            <img loading="lazy" src="<?php if($tagline_block['image']['url']){ echo esc_url($tagline_block['image']['url']); } ?>" alt="<?php if($tagline_block['image']['title']){ echo esc_url($tagline_block['image']['title']); } ?>" class="fade">
                             <?php } ?>
                             <div class="fade">
                             <?php $steps =  $tagline_block['steps']; 

@@ -49,7 +49,7 @@ $current_language = pll_current_language();
                                     $link_target = $link['target'] ? $link['target'] : '_self';
                                     ?>
                                     <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"> <span><?php echo esc_html( $link_title ); ?></span>
-                                    <img src="<?php echo get_template_directory_uri();?>/img/arrow-right_white.svg" alt=""></a>
+                                    <img loading="lazy" src="<?php echo get_template_directory_uri();?>/img/arrow-right_white.svg" alt=""></a>
 
                                 <?php } ?>
                                 
@@ -60,7 +60,7 @@ $current_language = pll_current_language();
                                 $image_url = $image['url'];
                                 $image_alt = $image['alt'];
                                 ?>
-                                    <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" class="fade parallax show" data-direction="up" data-speed="0.1" style="transform: translateY(0px);">
+                                    <img loading="lazy" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>" class="fade parallax show" data-direction="up" data-speed="0.1" style="transform: translateY(0px);">
 
                                 <?php } ?>
                             </div>
@@ -100,7 +100,7 @@ $current_language = pll_current_language();
                                                     $image_url = $icon['url'];
                                                     $image_alt = $icon['alt'];
                                                     ?>
-                                                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                                                        <img loading="lazy" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
 
                                                     <?php } ?>
                                                 </div>
@@ -157,7 +157,7 @@ $current_language = pll_current_language();
                                                     $image_url = $image['url'];
                                                     $image_alt = $image['alt'];
                                                     ?>
-                                                        <img src="<?php echo esc_url($image_url); ?>" class="fade" alt="<?php echo esc_attr($image_alt); ?>">
+                                                        <img loading="lazy" src="<?php echo esc_url($image_url); ?>" class="fade" alt="<?php echo esc_attr($image_alt); ?>">
 
                                                     <?php } ?>
                                                 </div>
@@ -185,7 +185,7 @@ $current_language = pll_current_language();
                                                     $image_url = $image['url'];
                                                     $image_alt = $image['alt'];
                                                     ?>
-                                                        <img src="<?php echo esc_url($image_url); ?>" class="fade" alt="<?php echo esc_attr($image_alt); ?>">
+                                                        <img loading="lazy" src="<?php echo esc_url($image_url); ?>" class="fade" alt="<?php echo esc_attr($image_alt); ?>">
 
                                                     <?php } ?>
                                                 </div>
@@ -204,7 +204,7 @@ $current_language = pll_current_language();
                                     ?>
                                     <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"  class="main-button" style="margin: 64px auto 0;"> 
                                         <span><?php echo esc_html( $link_title ); ?></span>
-                                    <img src="<?php echo get_template_directory_uri();?>/img/arrow-right.svg" alt=""></a>
+                                    <img loading="lazy" src="<?php echo get_template_directory_uri();?>/img/arrow-right.svg" alt=""></a>
 
                                 <?php } ?>
                            
@@ -244,7 +244,7 @@ $current_language = pll_current_language();
                                             ?>
                                             " class="card fade">
                                                 <?php if ( has_post_thumbnail($partner->ID) ) : ?>
-                                                    <img src="<?php echo get_the_post_thumbnail_url($partner->ID);?>" alt="<?php the_title($partner->ID); ?>">
+                                                    <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($partner->ID);?>" alt="<?php the_title($partner->ID); ?>">
                                                 <?php endif;?>
                                                 
                                             </a>
@@ -301,9 +301,9 @@ $current_language = pll_current_language();
                                     <?php foreach( $case_study as $case_study_item ) { ?>
                                         <div class="fade">
                                             <?php if ( has_post_thumbnail($case_study_item->ID) ) : ?>
-                                                <img src="<?php echo get_the_post_thumbnail_url($case_study_item->ID);?>" alt="<?php the_title($case_study_item->ID); ?>">
+                                                <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($case_study_item->ID);?>" alt="<?php the_title($case_study_item->ID); ?>">
                                                 <?php else:?>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/img/default.jpg" alt="<?php the_title($case_study_item->ID); ?>">
+                                            <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/img/default.jpg" alt="<?php the_title($case_study_item->ID); ?>">
                                         <?php endif;?>
                                             <p>
                                                 <?php $company_name = get_field('company_name', $case_study_item->ID); 

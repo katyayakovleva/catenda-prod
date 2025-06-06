@@ -102,18 +102,21 @@ add_action( 'after_setup_theme', 'catenda_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function catenda_scripts() {
-	wp_enqueue_style( 'catenda-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_enqueue_style('swiper', "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css", array(), rand(111,9999));
-	wp_enqueue_style('style', get_template_directory_uri(). '/styles/style.css', array(), rand(111,9999));
-	wp_enqueue_style('reset', get_template_directory_uri(). '/styles/reset.css', array(), rand(111,9999));
-	
-	wp_enqueue_script( 'swiper',"https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js", array(), _S_VERSION, true );
-	wp_enqueue_script( 'index', get_template_directory_uri() . '/js/index.js', array(), rand(111,9999), true );
-	wp_enqueue_script( 'glossary', get_template_directory_uri() . '/js/glossary.js', array(), rand(111,9999), true );
+    wp_enqueue_style('catenda-style', get_stylesheet_uri(), array(), _S_VERSION);
+    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', array(), null);
+    wp_enqueue_style('theme-style', get_template_directory_uri() . '/styles/style.css', array(), filemtime(get_template_directory() . '/styles/style.css'));
+    wp_enqueue_style('theme-reset', get_template_directory_uri() . '/styles/reset.css', array(), filemtime(get_template_directory() . '/styles/reset.css'));
 
+    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array(), null, true);
+    wp_script_add_data('swiper-js', 'defer', true);
+
+    wp_enqueue_script('index-js', get_template_directory_uri() . '/js/index.js', array('swiper-js'), filemtime(get_template_directory() . '/js/index.js'), true);
+    wp_script_add_data('index-js', 'defer', true);
+
+    wp_enqueue_script('glossary-js', get_template_directory_uri() . '/js/glossary.js', array(), filemtime(get_template_directory() . '/js/glossary.js'), true);
+    wp_script_add_data('glossary-js', 'defer', true);
 }
-add_action( 'wp_enqueue_scripts', 'catenda_scripts' );
-
+add_action('wp_enqueue_scripts', 'catenda_scripts');
 
 /**
  * Generates a social share link for a post (Twitter, Facebook, or LinkedIn).
@@ -196,7 +199,7 @@ class Catenda_Menu_Walker_Desktop extends Walker_Nav_Menu {
 		if (is_object($args) && $args->walker->has_children) {
 			if($depth == 0){
 				$output .= '<li class="' .  implode(' ', $item->classes) . '">';
-				$output .= '<a class="" role="button"><span>' . $item->title . '</span><button><img src="'.get_template_directory_uri().'/img/arrow-bottom.svg" alt=""></button></a>';
+				$output .= '<a class="" role="button"><span>' . $item->title . '</span><button><img loading="lazy" src="'.get_template_directory_uri().'/img/arrow-bottom.svg" alt=""></button></a>';
 			}
 		} else {
 			if($depth == 0){

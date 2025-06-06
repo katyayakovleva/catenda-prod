@@ -30,7 +30,7 @@ $current_language = pll_current_language(); // Get the current language using Po
                         <p class="fade"><?php echo $banner_block['text']; ?></p>
                     </div>
                     <?php if($banner_block['image']){?>
-                    <img src="<?php echo esc_url($banner_block['image']['url']); ?>" class="fade" alt="<?php echo esc_url($banner_block['image']['title']); ?>">
+                    <img loading="lazy" src="<?php echo esc_url($banner_block['image']['url']); ?>" class="fade" alt="<?php echo esc_url($banner_block['image']['title']); ?>">
                     <?php } ?>
                     <div class="about-hero__metrics fade-container">
                     <?php $countdown_block = get_field('countdown_block'); ?>
@@ -96,7 +96,7 @@ $current_language = pll_current_language(); // Get the current language using Po
 
                         <div class="fade" style="transition-duration: 0.5s;">
                             <div>
-                                <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_url($icon['title']); ?>">
+                                <img loading="lazy" src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_url($icon['title']); ?>">
                             </div>
                             <b role="heading" aria-level="3"><?php echo esc_html( $title ); ?></b>
                             <p><?php echo esc_html( $description ); ?></p>
@@ -159,7 +159,7 @@ $current_language = pll_current_language(); // Get the current language using Po
                         <?php  while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                         <div class="fade">
                             <?php if ( has_post_thumbnail() ) : ?>
-                                <img src="<?php echo get_the_post_thumbnail_url($post->ID);?>" alt="<?php the_title(); ?>">
+                                <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($post->ID);?>" alt="<?php the_title(); ?>">
                             <?php endif;?>
                             <p><?php the_title(); ?></p>
                             <div class="learn-more-btn"><?php if( get_field('active') ) { echo '<a  href="'.esc_attr( get_field('link')).'">'.get_field('learn_more', $current_language).'</a>';} else { echo '<a disabled>'.get_field('coming_soon', $current_language).'</a>';} ?>

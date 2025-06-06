@@ -57,9 +57,9 @@ $description = get_field('text');
                                 <?php if(($n)%3 == 0): ?><div class="swiper-slide"><?php endif;?>
                                     <div class="fade">
                                     <?php if ( has_post_thumbnail() ) : ?>
-                                        <img src="<?php echo get_the_post_thumbnail_url($post->ID);?>" alt="<?php the_title(); ?>">
+                                        <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($post->ID);?>" alt="<?php the_title(); ?>">
                                     <?php else:?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/img/default.jpg" alt="<?php the_title(); ?>">
+                                        <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/img/default.jpg" alt="<?php the_title(); ?>">
                                     <?php endif;?>
                                         <p><?php the_title(); ?></p>
                                         <div class="learn-more-btn"><a href="<?php echo get_permalink($post->ID ); ?>"><?php the_field('learn_more', $current_language); ?></a>

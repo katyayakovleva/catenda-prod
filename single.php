@@ -76,16 +76,16 @@ function copyURL(event) {
                         </div>
 
                         <div>
-                            <a href="<?php echo social_share_link($post->ID, "facebook");?>"><img src="<?php echo get_template_directory_uri();?>/img/facebook.svg" alt="facebook-icon"></a>
-                            <a href="<?php echo social_share_link($post->ID, "twitter");?>"><img src="<?php echo get_template_directory_uri();?>/img/twitter.svg" alt="twitter-icon"></a>
-                            <a href="<?php echo social_share_link($post->ID, "linkedin");?>"><img src="<?php echo get_template_directory_uri();?>/img/linkedin.svg" alt="linkedin-icon"></a>
-                            <a href="#" onclick="copyURL(event)"><img src="<?php echo get_template_directory_uri();?>/img/copy.svg" alt="linkedin-icon" style="width:24px;"></a>
+                            <a href="<?php echo social_share_link($post->ID, "facebook");?>"><img loading="lazy" src="<?php echo get_template_directory_uri();?>/img/facebook.svg" alt="facebook-icon"></a>
+                            <a href="<?php echo social_share_link($post->ID, "twitter");?>"><img loading="lazy" src="<?php echo get_template_directory_uri();?>/img/twitter.svg" alt="twitter-icon"></a>
+                            <a href="<?php echo social_share_link($post->ID, "linkedin");?>"><img loading="lazy" src="<?php echo get_template_directory_uri();?>/img/linkedin.svg" alt="linkedin-icon"></a>
+                            <a href="#" onclick="copyURL(event)"><img loading="lazy" src="<?php echo get_template_directory_uri();?>/img/copy.svg" alt="linkedin-icon" style="width:24px;"></a>
 
                         </div>
                     </div>
                     <?php if(has_post_thumbnail()){?>
                         <div class="blog-2__image">
-                            <img src="<?php echo get_the_post_thumbnail_url();?>" alt="<?php the_title(); ?>">
+                            <img loading="lazy" src="<?php echo get_the_post_thumbnail_url();?>" alt="<?php the_title(); ?>">
                         </div>
                     <?php } ?>
                 </section>

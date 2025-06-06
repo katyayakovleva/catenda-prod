@@ -32,7 +32,7 @@ $current_language = pll_current_language();
                             $footer_logo_url = $footer_logo['url'];
                             $footer_logo_alt = $footer_logo['alt'];
                             ?>
-                            <img src="<?php echo esc_url($footer_logo_url); ?>" alt="<?php echo esc_attr($footer_logo_alt); ?>">
+                            <img loading="lazy" src="<?php echo esc_url($footer_logo_url); ?>" alt="<?php echo esc_attr($footer_logo_alt); ?>">
 
                             <?php
                         endif; 
@@ -57,7 +57,7 @@ $current_language = pll_current_language();
                                
                                 <a
                                 aria-label="Go to Catenda social network"
-                                href="<?php echo esc_attr( $link ); ?>"><img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt); ?>"></a>
+                                href="<?php echo esc_attr( $link ); ?>"><img loading="lazy" src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt); ?>"></a>
                                 <?php
                             endwhile;
 
@@ -116,7 +116,7 @@ $current_language = pll_current_language();
 
                 <div class="footer__logo_mobile">
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                        <img src="<?php echo esc_url($footer_logo_url); ?>" alt="<?php echo esc_attr($footer_logo_alt); ?>">
+                        <img loading="lazy" src="<?php echo esc_url($footer_logo_url); ?>" alt="<?php echo esc_attr($footer_logo_alt); ?>">
 
                     </a>
                 </div>

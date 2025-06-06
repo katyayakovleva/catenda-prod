@@ -24,9 +24,9 @@ $current_language = pll_current_language();
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-    <link
+    <link rel="preload" as="font" crossorigin
         href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+       >
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); // Add dynamic body classes. ?>>
@@ -42,7 +42,7 @@ $current_language = pll_current_language();
                     $header_logo_url = $header_logo['url'];
                     $header_logo_alt = $header_logo['alt'];
                     ?>
-                    <img src="<?php echo esc_url($header_logo_url); ?>" alt="<?php echo esc_attr($header_logo_alt); ?>">
+                    <img loading="lazy" src="<?php echo esc_url($header_logo_url); ?>" alt="<?php echo esc_attr($header_logo_alt); ?>">
 
                     <?php
                 endif; 
@@ -104,7 +104,7 @@ $current_language = pll_current_language();
                         <a role="button">
                             <span><?php echo strtoupper( $current_language ) ?></span>
                             <button>
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-bottom.svg" alt="">
+                                <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/img/arrow-bottom.svg" alt="">
                             </button>
                         </a>
                         <?php 

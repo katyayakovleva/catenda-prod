@@ -157,11 +157,11 @@ $description = get_field('text', $page_for_posts);
 					<div class="cta__description fade"><?php echo esc_html( $book_a_demo_block['text'] ); ?></div>
 					<a href="<?php echo esc_url( $book_a_demo_block['link']['url'] ); ?>" class="cta__button">
 						<span><?php echo esc_html( $book_a_demo_block['link']['title'] ); ?></span>
-						<img src="<?php echo get_template_directory_uri();?>/img/arrow-right.svg" alt="">
+						<img loading="lazy" src="<?php echo get_template_directory_uri();?>/img/arrow-right.svg" alt="">
 					</a>
 				</div>
 				<div>
-					<img class="fade" src="<?php echo esc_url($book_a_demo_block['image']['url']); ?>" alt="<?php echo esc_attr($book_a_demo_block['image']['alt']); ?>">
+					<img loading="lazy" class="fade" src="<?php echo esc_url($book_a_demo_block['image']['url']); ?>" alt="<?php echo esc_attr($book_a_demo_block['image']['alt']); ?>">
 				</div>
 			</section>
 
@@ -183,7 +183,7 @@ $description = get_field('text', $page_for_posts);
 				
 			</div>
 			<div>
-				<img src="<?php echo esc_url($subscribtion_block['image']['url']); ?>" alt="<?php echo esc_attr($subscribtion_block['image']['alt']); ?>">
+				<img loading="lazy" src="<?php echo esc_url($subscribtion_block['image']['url']); ?>" alt="<?php echo esc_attr($subscribtion_block['image']['alt']); ?>">
 			</div>
 		</section>
 

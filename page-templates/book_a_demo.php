@@ -42,7 +42,7 @@ $form = get_field('form');
                             $image_url = $image['url'];
                             $image_alt = $image['alt'];
                             ?>
-                            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                            <img loading="lazy" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
                         <?php endif;?>
                       
                     </div>

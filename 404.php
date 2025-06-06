@@ -37,7 +37,7 @@ $current_language = pll_current_language();
                         ?>
                         <a href="<?php echo esc_url( $first_link_url ); ?>">
                             <span><?php echo esc_html( $first_link_title ); ?></span>
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-right.svg" alt="">
+                            <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/img/arrow-right.svg" alt="">
                         </a>
 
                     <?php endif;?>

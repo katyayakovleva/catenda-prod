@@ -31,7 +31,7 @@ get_header(); // Include the header template.
                         <?php $link =  $banner_block['link']; ?>
                         <a href="<?php echo esc_url($link['url']);?>">
                             <span><?php echo $link['title'];?></span>
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-right.svg" alt="">
+                            <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/img/arrow-right.svg" alt="">
                         </a>
                     </div>
 
@@ -39,7 +39,7 @@ get_header(); // Include the header template.
                     <div>
                     <?php 
                             $image =  $banner_block['image']; ?>
-                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_url($image['title']); ?>" class="fade parallax" data-direction="up" data-speed="0.1" style="transform: translateY(0px);">
+                        <img loading="lazy" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_url($image['title']); ?>" class="fade parallax" data-direction="up" data-speed="0.1" style="transform: translateY(0px);">
                     </div>
                 </section>
                 <section class="trusted-companies">
@@ -55,7 +55,7 @@ get_header(); // Include the header template.
                                 foreach( $partners as $partner ) {
                                     ?>
                                     <?php if ( has_post_thumbnail($partner->ID) ) : ?>
-                                        <img src="<?php echo get_the_post_thumbnail_url($partner->ID);?>" alt="<?php the_title($partner->ID); ?>">
+                                        <img loading="lazy" src="<?php echo get_the_post_thumbnail_url($partner->ID);?>" alt="<?php the_title($partner->ID); ?>">
                                     <?php endif;?>
                                     <?php
                                 }
@@ -120,7 +120,7 @@ get_header(); // Include the header template.
                                 }
                                 ?>
                                     <div class="benefits__graph_mobile">
-                                        <img src="<?php echo esc_url( $first_img ); ?>" alt="Catenda dashboard">
+                                        <img loading="lazy" src="<?php echo esc_url( $first_img ); ?>" alt="Catenda dashboard">
                                     </div>
                                 </div>
                
@@ -130,7 +130,7 @@ get_header(); // Include the header template.
                         </div>
 
                         <div class="fade">
-                            <img src="<?php echo esc_url( $desktop_first_img ); ?>" class="fade" style="transition-duration: 1s;"
+                            <img loading="lazy" src="<?php echo esc_url( $desktop_first_img ); ?>" class="fade" style="transition-duration: 1s;"
                                 alt="Catenda dashboard" id="main-dashboard-image">
                         </div>
                         <?php }; ?>
@@ -163,7 +163,7 @@ get_header(); // Include the header template.
  
                          <div class="fade" style="transition-duration: 0.5s;">
                              <div>
-                                 <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_url($icon['title']); ?>">
+                                 <img loading="lazy" src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_url($icon['title']); ?>">
                              </div>
                              <b role="heading" aria-level="3"><?php echo esc_html( $title ); ?></b>
                              <p><?php echo esc_html( $description ); ?></p>
@@ -190,7 +190,7 @@ get_header(); // Include the header template.
                         $third_block = $countdown_block['third_block'];
                     ?>
                         <div>
-                            <img src="<?php echo esc_url($first_block['image']['url']); ?>" alt="<?php echo esc_html($first_block['image']['title']); ?>" class="fade"
+                            <img loading="lazy" src="<?php echo esc_url($first_block['image']['url']); ?>" alt="<?php echo esc_html($first_block['image']['title']); ?>" class="fade"
                                 style="transition-delay: 0.2s;">
                             <div class="fade" style="transition-delay: 0.3s;">
                                 <?php
@@ -209,12 +209,12 @@ get_header(); // Include the header template.
                                 <h3 class="counter" data-suffix="<?php echo $countdown_value['suffix']; ?>" style="--initialValue: <?php echo $countdown_value['initial']?>; --finalValue: <?php echo $countdown_value['final']?>;"></h3>
                                 <p><?php echo $second_block['text']; ?></p>
                             </div>
-                            <img src="<?php echo esc_url($second_block['image']['url']); ?>" alt="<?php echo esc_html($second_block['image']['title']); ?>" class="fade"
+                            <img loading="lazy" src="<?php echo esc_url($second_block['image']['url']); ?>" alt="<?php echo esc_html($second_block['image']['title']); ?>" class="fade"
                                 style="transition-delay: 0.3s;">
                         </div>
 
                         <div>
-                            <img src="<?php echo esc_url($third_block['image']['url']); ?>" alt="<?php echo esc_html($third_block['image']['title']); ?>" class="fade"
+                            <img loading="lazy" src="<?php echo esc_url($third_block['image']['url']); ?>" alt="<?php echo esc_html($third_block['image']['title']); ?>" class="fade"
                                 style="transition-delay: 0.2s;">
                             <div class="fade" style="transition-delay: 0.3s;">
                             <?php
@@ -252,7 +252,7 @@ get_header(); // Include the header template.
                             ?>
                             <div class="fade">
                                 <div>
-                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_url($image['title']); ?>">
+                                <img loading="lazy" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_url($image['title']); ?>">
                                 </div>
 
                                 <blockquote>

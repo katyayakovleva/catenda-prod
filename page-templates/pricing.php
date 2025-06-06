@@ -68,7 +68,7 @@ get_header(); // Include the header template.
                 <div class="popup" id="popup-<?php echo $title; ?>">
                 <div class="popup__overlay"></div>
                     <div class="popup__content popup__content_pricing">
-                        <button class="popup__close"><img src="<?php echo get_template_directory_uri(); ?>/img/cross.svg" /></button>
+                        <button class="popup__close"><img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/img/cross.svg" /></button>
 
                        
 
