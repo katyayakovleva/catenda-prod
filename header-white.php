@@ -24,9 +24,37 @@ $current_language = pll_current_language();
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-    <link rel="preload" as="font" crossorigin
-        href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-       >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+  onload="this.onload=null;this.rel='stylesheet'"
+/>
+<noscript>
+  <link
+    href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet"
+  />
+</noscript>
+
+ <style>
+    @media (max-width: 600px) {
+         .ax-widget-container {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transition: none !important;
+  }
+      .hero__left-description, .hero__left h1,  {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transition: none !important;
+      }
+    }
+  </style>
+
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); // Add dynamic body classes. ?>>

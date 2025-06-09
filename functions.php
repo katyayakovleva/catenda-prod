@@ -101,22 +101,73 @@ add_action( 'after_setup_theme', 'catenda_content_width', 0 );
 /**
  * Enqueue scripts and styles.
  */
-function catenda_scripts() {
-    wp_enqueue_style('catenda-style', get_stylesheet_uri(), array(), _S_VERSION);
-    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', array(), null);
-    wp_enqueue_style('theme-style', get_template_directory_uri() . '/styles/style.css', array(), filemtime(get_template_directory() . '/styles/style.css'));
-    wp_enqueue_style('theme-reset', get_template_directory_uri() . '/styles/reset.css', array(), filemtime(get_template_directory() . '/styles/reset.css'));
 
-    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array(), null, true);
-    wp_script_add_data('swiper-js', 'defer', true);
-
-    wp_enqueue_script('index-js', get_template_directory_uri() . '/js/index.js', array('swiper-js'), filemtime(get_template_directory() . '/js/index.js'), true);
-    wp_script_add_data('index-js', 'defer', true);
-
-    wp_enqueue_script('glossary-js', get_template_directory_uri() . '/js/glossary.js', array(), filemtime(get_template_directory() . '/js/glossary.js'), true);
-    wp_script_add_data('glossary-js', 'defer', true);
+function catenda_resource_hints( $urls, $relation_type ) {
+    if ( 'preconnect' === $relation_type ) {
+        $urls[] = array(
+            'href'       => 'https://cdn.jsdelivr.net',
+            'crossorigin'=> '',
+        );
+    }
+    return $urls;
 }
-add_action('wp_enqueue_scripts', 'catenda_scripts');
+add_filter( 'wp_resource_hints', 'catenda_resource_hints', 10, 2 );
+
+function catenda_scripts() {
+    wp_enqueue_style(
+        'theme-reset',
+        get_template_directory_uri() . '/styles/reset.css',
+        array(),
+        filemtime( get_template_directory() . '/styles/reset.css' )
+    );
+    wp_enqueue_style(
+        'theme-style',
+        get_template_directory_uri() . '/styles/style.css',
+        array( 'theme-reset' ),
+        filemtime( get_template_directory() . '/styles/style.css' )
+    );
+    wp_enqueue_style(
+        'swiper-css',
+        'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css',
+        array( 'theme-style' ),
+        null
+    );
+    wp_enqueue_style(
+        'catenda-style',
+        get_stylesheet_uri(),
+        array( 'swiper-css' ),
+        _S_VERSION
+    );
+
+    wp_enqueue_script(
+        'swiper-js',
+        'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js',
+        array(),
+        null,
+        true
+    );
+    wp_script_add_data( 'swiper-js', 'defer', true );
+
+    wp_enqueue_script(
+        'index-js',
+        get_template_directory_uri() . '/js/index.js',
+        array( 'swiper-js' ),
+        filemtime( get_template_directory() . '/js/index.js' ),
+        true
+    );
+    wp_script_add_data( 'index-js', 'defer', true );
+
+    wp_enqueue_script(
+        'glossary-js',
+        get_template_directory_uri() . '/js/glossary.js',
+        array(),
+        filemtime( get_template_directory() . '/js/glossary.js' ),
+        true
+    );
+    wp_script_add_data( 'glossary-js', 'defer', true );
+}
+add_action( 'wp_enqueue_scripts', 'catenda_scripts' );
+
 
 /**
  * Generates a social share link for a post (Twitter, Facebook, or LinkedIn).
