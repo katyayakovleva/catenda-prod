@@ -42,11 +42,7 @@ $current_language = pll_current_language();
 
  <style>
     @media (max-width: 600px) {
-         .ax-widget-container {
-    visibility: hidden !important;
-    opacity: 0 !important;
-    transition: none !important;
-  }
+        
       .hero__left-description, .hero__left h1,  {
         opacity: 1 !important;
         visibility: visible !important;
