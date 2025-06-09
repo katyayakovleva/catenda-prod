@@ -7678,3 +7678,19 @@ fieldset input,  fieldset textarea{
   font-weight: bold;
   text-decoration: underline;
 }
+h2.wp-block-heading + h3.wp-block-heading {
+  margin-top: 0px !important;
+}
+.blog-content p + h3.wp-block-heading {
+  margin-top: 30px;  
+}
+.blog-content > div ul li{
+  font-size: 16px !important;
+    line-height: 150% !important;
+}
+.blog-content a .has-vivid-cyan-blue-color {
+      color: #0659ae !important;
+}
+.blog-content a{
+color: #0659ae !important;
+}
