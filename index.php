@@ -83,21 +83,22 @@ $description = get_field('text', $page_for_posts);
 
                 <section class="glossary-content">
 					<?php 
-					if($s){ 
+$search = get_search_query();
+					if($search){ 
                         
                         $args = array(
                             'post_type'      => 'post',
                             'posts_per_page' => -1,
                             'orderby'        => 'title',
                             'order'          => 'ASC',
-                            's'              => $s,
+                            's'              => $search,
                         );
                         
                         $posts_s=new WP_Query($args);
                         ?>
                         <div class="glossary-content__item" style="scroll-margin-top: 4em;">
 							<div>
-								<?php echo $s; ?>
+								<?php echo esc_html($search); ?>
 							</div>
 
 							<div id="digits-container">
